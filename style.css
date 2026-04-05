@@ -48,11 +48,26 @@ nav ul a { color: white; text-decoration: none; text-transform: uppercase; font-
 
 /* Hero Section */
 .hero {
-    height: 90vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     padding: 0 5%;
     position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -5rem;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-image: url('./assets/photo.png');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    opacity: 0.2; /* Aumentei um pouco a visibilidade */
+    z-index: -1;
 }
 
 .hero h1 {
@@ -63,18 +78,7 @@ nav ul a { color: white; text-decoration: none; text-transform: uppercase; font-
 }
 
 .hero-image {
-    width: 50%;
-    position: absolute;
-    right: 35%;
-    top: 45%;
-    transform: translateY(-50%);
-    opacity: 0.1;
-}
-
-.hero-image img {
-    width: 90vw;
-    height: auto;
-    object-fit: cover;
+    display: none; 
 }
 
 
@@ -445,7 +449,7 @@ h1, h2, h3 {
 .site-footer {
     background-color: #050505; /* Um preto levemente mais profundo */
     border-top: 1px solid #1a1a1a;
-    padding: 80px 0 20px 0;
+    padding: 80px 5% 20px 5%; /* Adicionado padding lateral 5% para manter espaço igual às outras seções */
     margin-top: 60px;
 }
 
