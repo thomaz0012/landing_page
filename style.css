@@ -612,10 +612,22 @@ h1, h2, h3 {
         padding: 100px 5% 50px;
         text-align: center;
         flex-direction: column;
+        position: relative;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-image: url('./assets/photo.png');
         background-size: cover;
-        background-position: right bottom; /* Alinha para mostrar mais a parte direita inferior da imagem */
+        background-position: calc(100% + 250px) bottom;
         background-repeat: no-repeat;
+        opacity: 0.8; /* Diminui apenas a claridade da imagem */
+        z-index: -1;
     }
 
     .hero h1 {
@@ -624,14 +636,14 @@ h1, h2, h3 {
     }
 
     .hero-image {
-        display: none; /* Oculta a img no mobile, pois agora é background */
+        display: none; 
     }
 
     .hero-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center bottom; /* Ajusta para focar na parte inferior da imagem */
+        object-position: center bottom; 
     }
 
     .hero-stats {
